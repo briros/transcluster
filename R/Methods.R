@@ -15,7 +15,7 @@ writeClusterFile <- function(clusters, threshold, isTrans=FALSE, nameRoot='defau
     label = 'true'
   }
   fileName = paste0(nameRoot, '_cluster_', label, '_', threshold, '.csv')
-  cat(paste0(label, ' threshold,', threshold, ',\n'), file=fileName, append=F)
+  cat(paste0(label, ' threshold,', threshold, '\n'), file=fileName, append=F)
   for (i in seq(1,length(clusters))){
     for (j in seq(1, length(clusters[[i]]))){
       cat(clusters[[i]][[j]], file=fileName, append=T)
