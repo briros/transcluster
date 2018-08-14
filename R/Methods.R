@@ -19,7 +19,13 @@ writeClusterFile <- function(clusters, threshold, isTrans=FALSE, nameRoot='defau
   for (i in seq(1,length(clusters))){
     for (j in seq(1, length(clusters[[i]]))){
       cat(clusters[[i]][[j]], file=fileName, append=T)
-      cat(',', file=fileName, append=T)
+      # cat(',', file=fileName, append=T)
+      if (j != length(clusters[[i]])){
+      # if we are NOT outputting final item for this line
+        cat(',',
+        file=fileName,
+        append=T)
+      }
     }
     cat('\n', file=fileName, append=T)
   }
